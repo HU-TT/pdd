@@ -1,0 +1,5 @@
+$ratio: 375 / 10;
+
+@function px2rem($p) {
+  @return $p / $ratio + rem
+}
