@@ -41,7 +41,7 @@
     },
     methods: {
       handleChange (item, index) {
-        console.log(this.$router.replace(this.subRouter[index]))
+        this.$router.replace(this.subRouter[index])
       }
     }
   }

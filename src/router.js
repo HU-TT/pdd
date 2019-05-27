@@ -14,7 +14,7 @@ export default new Router({
       component: () => import('./views/Home/'),
       children: [
         {path: '/home', redirect: '/home/hot'},
-        {path: 'hot', component: () => import('./views/Home/Children/Hot')},
+        {path: 'hot', component: () => import('./views/Home/Children/Hot/Hot')},
         {path: 'dress', component: () => import('./views/Home/Children/Dress')},
         {path: 'ele', component: () => import('./views/Home/Children/Ele')},
         {path: 'Food', component: () => import('./views/Home/Children/Food')},
