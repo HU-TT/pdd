@@ -1,11 +1,18 @@
 <template>
   <div>
     Me
+    <tab-bar></tab-bar>
   </div>
 </template>
 
 <script>
-  export default {}
+  import TabBar from '../../components/TabBer/'
+
+  export default {
+    components: {
+      TabBar
+    }
+  }
 </script>
 
 <style scoped lang="scss">

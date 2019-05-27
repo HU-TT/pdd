@@ -11,7 +11,19 @@ export default new Router({
     },
     {
       path: '/home',
-      component: () => import('./views/Home/')
+      component: () => import('./views/Home/'),
+      children: [
+        {path: '/home', redirect: '/home/hot'},
+        {path: 'hot', component: () => import('./views/Home/Children/Hot')},
+        {path: 'dress', component: () => import('./views/Home/Children/Dress')},
+        {path: 'ele', component: () => import('./views/Home/Children/Ele')},
+        {path: 'Food', component: () => import('./views/Home/Children/Food')},
+        {path: 'general', component: () => import('./views/Home/Children/General')},
+        {path: 'box', component: () => import('./views/Home/Children/Box')},
+        {path: 'man', component: () => import('./views/Home/Children/Man')},
+        {path: 'mbaby', component: () => import('./views/Home/Children/Mbaby')},
+        {path: 'shirt', component: () => import('./views/Home/Children/Shirt')}
+      ]
     },
     {
       path: '/chat',
