@@ -72,3 +72,8 @@ a:active{
   text-decoration:none;
   /* 指正在点的链接*/
 }
+
+.ly-tabbar {
+  position: fixed!important;
+  z-index: 999!important;
+}

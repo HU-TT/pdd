@@ -1,5 +1,4 @@
 <template>
-<!-- 底部通栏 -->
   <div class="bottom-bar">
       <span class="tab-item" @click="switchTo('/home')" :class="{active: path.includes('/home') }">
           <img :src="path.includes('/home')  ? require('../../../public/images/icon_home_selected.png') : require('../../../public/images/icon_home.png')" alt="">
