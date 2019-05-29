@@ -2,15 +2,13 @@
   <div>
     <div class="recommend-container">
       <ul class="recommend">
-        <li class="recommend-item" v-for="(item, index) in recommendShopList" :key="index">
-          <img :src="item.thumb_url" alt="" v-if="item.thumb_url" width="100%">
-          <h4 class="item-title">{{item.short_name}}</h4>
-          <div class="item-bottom">
-            <span class="item-price">￥{{item.price / 100}}</span>
-            <span class="item-tip">{{item.sales_tip}}</span>
-            <button class="item-btn">找相关</button>
-          </div>
-        </li>
+        <shop-list
+          v-for="(item, index) in recommendShopList"
+          :key="index"
+          :item="item"
+          :user="false"
+          tag="li"
+        />
       </ul>
     </div>
     <tab-bar></tab-bar>
@@ -19,11 +17,13 @@
 
 <script>
   import TabBar from '../../components/TabBer/'
+  import ShopList from '../../components/ShopList'
   import {mapActions, mapGetters} from 'vuex'
 
   export default {
     components: {
-      TabBar
+      TabBar,
+      ShopList
     },
     mounted () {
       this.initRecommendShopList()
@@ -33,7 +33,12 @@
     },
     computed: {
       ...mapGetters(['recommendShopList'])
-    }
+    },
+    props: [
+      {
+
+      }
+    ]
   }
 </script>
 

@@ -3,3 +3,33 @@ $ratio: 375 / 10;
 @function px2rem($p) {
   @return $p / $ratio + rem
 }
+
+@mixin border-top-1px($colors) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $colors;
+  }
+}
+
+@mixin border-bottom-1px($colors) {
+  position: relative;
+  border: none;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $colors;
+    transform: scaleY(.5);
+  }
+}
