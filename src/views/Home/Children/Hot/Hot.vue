@@ -24,6 +24,8 @@
   export default {
     mounted () {
       this.initHomeCasual()
+      this.initHomeNav()
+      this.initHomeShopList()
     },
     components: {
       HotNav,
@@ -33,7 +35,7 @@
       ...mapGetters(['homeCasual'])
     },
     methods: {
-      ...mapActions(['initHomeCasual'])
+      ...mapActions(['initHomeCasual', 'initHomeNav', 'initHomeShopList'])
     },
     watch: {
       homeCasual () {

@@ -1,45 +1,14 @@
 <template>
   <div class="shop-container">
     <ul class="shop-list">
-      <li class="shop-list-item">
-        <img src="../../imgs/shop_list/shop_item.png" alt="" width="100%">
-        <h4 class="list-item-title">【唐幂】整条刺绣民族风围巾女士秋冬季中年妈妈羊绒羊毛披肩保暖</h4>
+      <li class="shop-list-item" v-for="(item, index) in homeShopList" :key="index">
+        <img :src="item.image_url" alt="" width="100%">
+        <h4 class="list-item-title">{{item.goods_name}}</h4>
         <div class="list-item-bottom">
-          <span class="item-price">￥26.9</span>
-          <span class="item-counter">已拼5345件</span>
+          <span class="item-price">￥{{item.normal_price / 100}}</span>
+          <span class="item-counter">{{item.sales_tip}}</span>
           <span class="item-user">
-            <img src="../../imgs/shop_list/user1.jpg" alt="">
-            <img src="../../imgs/shop_list/user2.jpg" alt="">
-          </span>
-          <span class="item-buy">
-            <button>去拼单 &gt;</button>
-          </span>
-        </div>
-      </li>
-      <li class="shop-list-item">
-        <img src="../../imgs/shop_list/shop_item.png" alt="" width="100%">
-        <h4 class="list-item-title">【唐幂】整条刺绣民族风围巾女士秋冬季中年妈妈羊绒羊毛披肩保暖</h4>
-        <div class="list-item-bottom">
-          <span class="item-price">￥26.9</span>
-          <span class="item-counter">已拼5345件</span>
-          <span class="item-user">
-            <img src="../../imgs/shop_list/user1.jpg" alt="">
-            <img src="../../imgs/shop_list/user2.jpg" alt="">
-          </span>
-          <span class="item-buy">
-            <button>去拼单 &gt;</button>
-          </span>
-        </div>
-      </li>
-      <li class="shop-list-item">
-        <img src="../../imgs/shop_list/shop_item.png" alt="" width="100%">
-        <h4 class="list-item-title">【唐幂】整条刺绣民族风围巾女士秋冬季中年妈妈羊绒羊毛披肩保暖</h4>
-        <div class="list-item-bottom">
-          <span class="item-price">￥26.9</span>
-          <span class="item-counter">已拼5345件</span>
-          <span class="item-user">
-            <img src="../../imgs/shop_list/user1.jpg" alt="">
-            <img src="../../imgs/shop_list/user2.jpg" alt="">
+            <img :src="c.avatar" alt="" v-for="(c, i) in item.bubble" :key="i">
           </span>
           <span class="item-buy">
             <button>去拼单 &gt;</button>
@@ -51,7 +20,13 @@
 </template>
 
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters(['homeShopList'])
+    }
+  }
 </script>
 
 <style scoped lang="scss">

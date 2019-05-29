@@ -1,70 +1,10 @@
 <template>
   <div class="hot-nav">
     <div class="hot-nav-content">
-      <div class="nav-content-inner">
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
-        </a>
-        <a class="inner-item">
-          <img src="../../imgs/nav/nav_icon01.png" alt="">
-          <span>限时秒杀</span>
+      <div class="nav-content-inner" v-if="homeNav.length > 0">
+        <a class="inner-item" v-for="(item, index) in homeNav" :key="index">
+          <img :src="item.iconurl" alt="">
+          <span>{{item.icontitle}}</span>
         </a>
       </div>
       <div class="hot-nav-bottom">
@@ -75,6 +15,8 @@
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
+
   export default {
     data () {
       return ({
@@ -93,7 +35,8 @@
           width: this.barXWidth + 'px',
           left: this.barMoveX + 'px'
         }
-      }
+      },
+      ...mapGetters(['homeNav'])
     },
     mounted () {
       this.bindEvent()
@@ -101,7 +44,7 @@
     },
     methods: {
       getBarWidth () {
-        const {bgBarW, screenW, scrollContentW} = this
+        const { bgBarW, screenW, scrollContentW } = this
         this.barXWidth = bgBarW * (screenW / scrollContentW)
       },
       bindEvent () {
@@ -123,7 +66,7 @@
       },
       handleTouchEnd () {
         this.endFlag = this.barMoveX
-      }
+      },
     }
   }
 </script>
@@ -138,13 +81,16 @@
     padding-bottom: 10px;
     box-sizing: border-box;
     position: relative;
+
     .hot-nav-content {
       width: 100%;
       overflow-x: scroll;
+
       .nav-content-inner {
         width: 720px;
         display: flex;
         flex-wrap: wrap;
+
         .inner-item {
           width: 90px;
           height: 90px;
@@ -154,16 +100,19 @@
           align-items: center;
           font-size: 14px;
           color: #666;
-            img {
-              width: 40%;
-              margin-bottom: 8px;
-            }
+
+          img {
+            width: 40%;
+            margin-bottom: 8px;
+          }
         }
       }
+
       &::-webkit-scrollbar {
         display: none;
       }
     }
+
     .hot-nav-bottom {
       width: 100px;
       height: 2px;
@@ -172,6 +121,7 @@
       left: 50%;
       margin-left: -50px;
       bottom: 8px;
+
       .hot-nav-bottom-inner {
         position: absolute;
         left: 0;
