@@ -13,3 +13,6 @@ export const getHomeShopList = () => ajax(`${baseUrl}/api/homeshoplist`)
 
 // 推荐商品列表
 export const getRecommendShopList = () => ajax(`${baseUrl}/api/recommendshoplist`)
+
+// 搜索商品列表
+export const getSearchGoods = () => ajax(`${baseUrl}/api/searchgoods`)

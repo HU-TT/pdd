@@ -684,6 +684,18 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@better-scroll/core@^2.0.0-alpha.9":
+  version "2.0.0-alpha.9"
+  resolved "https://registry.npm.taobao.org/@better-scroll/core/download/@better-scroll/core-2.0.0-alpha.9.tgz#61e4311416f2126c4752b0346a3e52ff74e97698"
+  integrity sha1-YeQxFBbyEmxHUrA0aj5S/3Tpdpg=
+  dependencies:
+    "@better-scroll/shared-utils" "^2.0.0-alpha.9"
+
+"@better-scroll/shared-utils@^2.0.0-alpha.9":
+  version "2.0.0-alpha.9"
+  resolved "https://registry.npm.taobao.org/@better-scroll/shared-utils/download/@better-scroll/shared-utils-2.0.0-alpha.9.tgz#4a807f99ea9106abdbfcdf2441a7c6e148178323"
+  integrity sha1-SoB/meqRBqvb/N8kQafG4UgXgyM=
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"

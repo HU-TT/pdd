@@ -1,4 +1,10 @@
-import { INIT_HOME_CASUAL, INIT_HOME_NAV, INIT_HOME_SHOP_LIST, INIT_RECOMMEND_SHOP_LIST } from './mutationsType'
+import {
+  INIT_HOME_CASUAL,
+  INIT_HOME_NAV,
+  INIT_HOME_SHOP_LIST,
+  INIT_RECOMMEND_SHOP_LIST,
+  INIT_SEARCH_GOODS
+} from './mutationsType'
 
 export default ({
   [INIT_HOME_CASUAL]: (state, { homeCasual }) => {
@@ -12,5 +18,8 @@ export default ({
   },
   [INIT_RECOMMEND_SHOP_LIST]: (state, { recommendShopList }) => {
     state.recommendShopList = recommendShopList
+  },
+  [INIT_SEARCH_GOODS]: (state, { searchGoods }) => {
+    state.searchGoods = searchGoods
   }
 })

@@ -1,5 +1,11 @@
-import { getHomeCasual, getHomeNav, getHomeShopList, getRecommendShopList } from '../api/'
-import { INIT_HOME_CASUAL, INIT_HOME_NAV, INIT_HOME_SHOP_LIST, INIT_RECOMMEND_SHOP_LIST } from './mutationsType'
+import { getHomeCasual, getHomeNav, getHomeShopList, getRecommendShopList, getSearchGoods } from '../api/'
+import {
+  INIT_HOME_CASUAL,
+  INIT_HOME_NAV,
+  INIT_HOME_SHOP_LIST,
+  INIT_RECOMMEND_SHOP_LIST,
+  INIT_SEARCH_GOODS
+} from './mutationsType'
 
 export default ({
   async initHomeCasual ({ commit }) {
@@ -17,5 +23,9 @@ export default ({
   async initRecommendShopList ({ commit }) {
     const res = await getRecommendShopList()
     commit(INIT_RECOMMEND_SHOP_LIST, { recommendShopList: res.message.data })
+  },
+  async initSearchGoods ({commit}) {
+    const res = await getSearchGoods()
+    commit(INIT_SEARCH_GOODS, {searchGoods: res.message.data})
   }
 })

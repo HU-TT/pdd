@@ -32,7 +32,6 @@
     },
     methods: {
       switchTo (path) {
-        // console.log(this.$router)
         this.$router.replace(path)
       }
     }
