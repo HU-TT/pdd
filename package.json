@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@better-scroll/core": "^2.0.0-alpha.9",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "ly-tab": "^2.1.2",
     "mint-ui": "^2.2.13",
